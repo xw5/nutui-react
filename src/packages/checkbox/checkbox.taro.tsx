@@ -117,9 +117,13 @@ export const Checkbox: FunctionComponent<
     // return !innerDisabled ? (!innerChecked ? '#d6d6d6' : '#fa2c19') : '#f5f5f5'
   }
   const renderLabel = () => {
+    const labelTemp = children || label
+    if (!labelTemp) {
+      return null
+    }
     return (
       <span className={`${b('label', { disabled: innerDisabled })} `}>
-        {children || label}
+        {labelTemp}
       </span>
     )
   }
